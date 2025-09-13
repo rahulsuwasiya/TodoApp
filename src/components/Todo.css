@@ -1,0 +1,239 @@
+/* ================================
+   Global Reset + Variables
+=================================== */
+:root {
+  /* Theme Colors */
+  --primary-color: #001214;     /* Main background dark */
+  --secondary-color: #ffffff;   /* Text/light accent */
+  --accent-color: #5dade2;      /* Button primary */
+  --accent-hover: #f1c40f;      /* Button hover */
+  --success-color: #2ecc71;     /* Success/Check button */
+  --danger-color: #e74c3c;      /* Delete/Clear button */
+  --danger-hover: #81407a;      /* Clear hover */
+  --text-dark: #1c2833;         /* Todo text */
+  --text-light: #f2f3f4;        /* Inputs/Todo background */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Urbanist", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--secondary-color);
+  font-weight: 900;
+}
+
+h1 {
+  font-size: 3.2rem;
+  font-weight: bold;
+}
+
+/* ================================
+   Todo Container
+=================================== */
+.todo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 3%;
+  background-image: linear-gradient(100deg, var(--primary-color), #001f29);
+  color: var(--secondary-color);
+  transition: 0.3s linear;
+  overflow: hidden;
+}
+
+/* ================================
+   Header / Form / DateTime
+=================================== */
+.header,
+.form,
+.datetime {
+  margin: 1rem;
+  min-height: 10vh;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 3rem;
+  min-height: 25vh;
+  width: 100%;
+}
+
+section h1 {
+  color: var(--secondary-color);
+  font-size: 4.8rem;
+  text-align: center;
+}
+
+.date-time {
+  font-size: 2.4rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+/* ================================
+   Form Styles
+=================================== */
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 0;
+  padding: 0.8rem;
+  width: 100%;
+  font-size: 1.7rem;
+}
+
+form input {
+  padding: 10px;
+  font-size: 1.8rem;
+  letter-spacing: 0.1rem;
+  border: none;
+  outline: none;
+  border-top-left-radius: 17px;
+  border-bottom-left-radius: 17px;
+  max-width: 500px;
+  width: 100%;
+  background-color: var(--text-light);
+  color: var(--primary-color);
+  transition: background-color 200ms ease-in-out;
+}
+
+form input:hover {
+  cursor: text;
+}
+
+form input::placeholder {
+  color: var(--secondary-color);
+  opacity: 0.7;
+}
+
+form button {
+  padding: 10px;
+  font-size: 1.7rem;
+  border: none;
+  outline: none;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  min-width: 100px;
+  background-color: var(--accent-color);
+  color: var(--secondary-color);
+  transition: box-shadow 200ms ease, background-color 200ms ease-in-out;
+}
+
+form button:hover {
+  cursor: pointer;
+  background-color: var(--accent-hover);
+}
+
+/* ================================
+   Todo List
+=================================== */
+.todo-list {
+  min-width: 25%;
+  list-style: none; /* remove bullets */
+}
+
+.myUnOrdList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+}
+
+.todo-item {
+  margin: 2.4rem;
+  font-size: 2rem;
+  color: var(--text-dark);
+  border-radius: 3rem;
+  background-color: var(--text-light);
+  min-width: 35rem;
+  max-width: 40rem;
+  padding: 1.3rem 3rem;
+  display: grid;
+  grid-template-columns: 1fr 0.2fr 0.2fr;
+  gap: 1.6rem;
+ align-items: center; 
+  transition: background-color 200ms ease-in-out;
+  overflow-wrap: anywhere;
+}
+
+
+
+/* ================================
+   Buttons (Check/Delete)
+=================================== */
+
+.check-btn,
+.delete-btn {
+  font-size: 2rem;
+  cursor: pointer;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 0rem;
+}
+
+.check-btn {
+  color: var(--secondary-color);
+  background-color: var(--success-color);
+}
+
+.delete-btn {
+  color: var(--secondary-color);
+  background-color: var(--danger-color);
+}
+
+/* ================================
+   Checklist States
+=================================== */
+.checkList {
+  text-decoration: line-through;
+}
+
+.notCheckList {
+  text-decoration: none;
+}
+
+/* ================================
+   Clear Button
+=================================== */
+.clear-btn {
+  background-color: var(--danger-color);
+  font-size: 1.6rem;
+  padding: 1rem 2.2rem;
+
+  /* Border radius with vendor prefixes */
+  border-radius: 0.3rem;
+  -webkit-border-radius: 0.3rem;
+  -moz-border-radius: 0.3rem;
+  -ms-border-radius: 0.3rem;
+  -o-border-radius: 0.3rem;
+
+  transition: background-color 200ms ease-in-out;
+}
+
+.clear-btn:hover {
+  background-color: var(--danger-hover);
+}
